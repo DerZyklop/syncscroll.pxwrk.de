@@ -1,5 +1,5 @@
 ###
-syncScroll.js (v0.2)
+syncScroll.js (v0.3)
 https://github.com/pxwrk/syncscroll.pxwrk.de
 ###
 
