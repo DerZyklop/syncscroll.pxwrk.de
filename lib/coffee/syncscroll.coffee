@@ -1,6 +1,6 @@
 ###
-syncScroll.js (v0.1)
-syncScroll.pxwrk.de
+syncScroll.js (v0.2)
+https://github.com/pxwrk/syncscroll.pxwrk.de
 ###
 
 (($) ->
