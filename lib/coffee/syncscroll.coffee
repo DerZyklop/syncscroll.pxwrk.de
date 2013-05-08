@@ -1,5 +1,5 @@
 ###
-syncScroll.js (v0.3)
+syncScroll.js (v0.4)
 https://github.com/pxwrk/syncscroll.pxwrk.de
 ###
 
@@ -18,19 +18,15 @@ https://github.com/pxwrk/syncscroll.pxwrk.de
     setNewPosition = (source, target) ->
       newScrollTop = percentage(source)/100*(contentHeight(target)-viewHeight(target))
       target.scrollTop(newScrollTop)
+    setEvents = (source, target) ->
+      source
+        .on 'mouseenter', ->
+          jQuery(this).on 'scroll', ->
+            setNewPosition(source, target)
+        .on 'mouseleave', ->
+          jQuery(this).off 'scroll'
 
-    el1
-      .on 'mouseenter', ->
-        jQuery(this).on 'scroll', ->
-          setNewPosition(el1, el2)
-      .on 'mouseleave', ->
-        jQuery(this).off 'scroll'
-
-    el2
-      .on 'mouseenter', ->
-        jQuery(this).on 'scroll', ->
-          setNewPosition(el2, el1)
-      .on 'mouseleave', ->
-        jQuery(this).off 'scroll'
+    setEvents(el1, el2)
+    setEvents(el2, el1)
 
   )(jQuery)
